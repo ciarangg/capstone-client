@@ -13,20 +13,24 @@ const Post = ({title, image, created_at, content, username, onDelete, id}) => {
                     <h5 className="mb-1">{title}</h5>
                     <small className="text-muted">{moment(created_at).fromNow()}</small>
                 </div>
-                <p className="mb-1">{content}</p>
-                <div clasName="letsFlex">
-                <img classname="whitespace" className="images" src={image}/>
-                <small classname="whitespace" className="text-muted">{username}</small>
-                <button classname="whitespace" 
-           className=" btn btn-danger"
-           onClick={onDelete}
-         >
-           Delete
-         </button>
-         <Link classname="whitespace" className="btn btn-warning" to={`/posts/edit/${id}`}>
-           Edit
-         </Link>
-         </div>
+                
+                
+                <p id="positionContent" className="mb-1">{content}</p>
+                
+
+                <div className="lets">
+
+                <div className="avatar">
+                <img className="images" src={image}/>
+                <small  className="text-muted">{username}</small>
+                </div>
+
+                <div className="theButtons">
+                <button className=" btn btn-primary" onClick={onDelete}>Delete</button>
+                <Link classname="whitespace" className="btn btn-warning" to={`/posts/edit/${id}`}>Edit</Link>
+                </div>
+
+                </div>
             </a>
             
            

@@ -41,6 +41,21 @@
   max-height:50px;
 }
 
+.lets {
+  display: flex;
+  justify-content: space-between;
+}
+
+.avatar {
+  display:flex;
+  flex-direction: column;
+}
 
 
+#positionContent {
+  text-align: left;
+}
 
+#big {
+  font-size: 90px;
+}

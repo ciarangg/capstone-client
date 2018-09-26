@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 
 const APIURL = 'https://fathomless-ocean-77552.herokuapp.com/posts/'
 
-class NewPostForm extends Component{
+class EditPostForm extends Component{
     state = {
         loadingPost: true,
         post: null 
@@ -41,11 +41,13 @@ class NewPostForm extends Component{
               }),
               body: JSON.stringify(this.state.post)
             });
+            return await response.json()
           };
      
       onSubmit = e => {
         e.preventDefault();
-        this.updatepost(this.props.match.params.id);
+        this.updatepost(this.props.match.params.id)
+        .then(this.props.loadData)
         this.props.history.push('/posts')
       };
      
@@ -89,4 +91,4 @@ class NewPostForm extends Component{
         )
     }
 }
-export default NewPostForm
+export default EditPostForm

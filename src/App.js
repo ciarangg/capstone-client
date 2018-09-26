@@ -21,7 +21,7 @@ class App extends Component {
 
         <Route exact path="/" component={SplashPage}/>
         <Route path='/posts' component={PostList}/>
-        <Route path="/posts/edit/:id" component={EditPostForm}/>
+        
 
        </div>
       </Router>

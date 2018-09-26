@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Post from './Post'
 import NewPostForm from './NewPostForm'
 import { Route } from 'react-router-dom'
+import EditPostForm from './EditPostForm'
 
 const APIURL = 'https://fathomless-ocean-77552.herokuapp.com/posts/'
 
@@ -11,15 +12,17 @@ class PostList extends Component {
         posts:[]
       }
       componentDidMount() {
-        fetch('/comments.json')
-        .then(res => res.json())
-        .then(comments => this.setState({comments}))
+
+        this.loadData()
+        // fetch('/comments.json')
+        // .then(res => res.json())
+        // .then(comments => this.setState({comments}))
       }
-      componentWillMount() {
-        fetch(APIURL)
-        .then(res => res.json())
-        .then(posts => this.setState({posts}))
-      }
+    //   componentWillMount() {
+    //     fetch(APIURL)
+    //     .then(res => res.json())
+    //     .then(posts => this.setState({posts}))
+    //   }
    
       addPost = async data => {
         const response = await fetch(APIURL, {
@@ -35,8 +38,16 @@ class PostList extends Component {
         console.log("post received", posts);
         this.setState({
           posts: [posts, ...this.state.posts]
+
         });
+        return posts
       };
+
+      loadData = () => {
+        return fetch(APIURL)
+        .then(res => res.json())
+        .then(posts => this.setState({posts}))
+      }
 
       deletePost(id) {
         const deleteURL = APIURL + id;
@@ -84,8 +95,13 @@ class PostList extends Component {
             <Route  exact path='/posts'  component={() => <div>{forumPost}</div> }/>
 
             <Route path="/posts/new" component={props => (
-                <NewPostForm {...props} addPost={this.addPost} />
+                <NewPostForm {...props} addPost={this.addPost} loadData={this.loadData} />
             )}/>
+                    
+            <Route path="/posts/edit/:id" component={props => (
+                <EditPostForm {...props} addPost={this.addPost} loadData={this.loadData} />
+            )}/>
+
 
             </div>
         )

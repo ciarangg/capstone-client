@@ -15,6 +15,7 @@ class NewPostForm extends Component{
         }
         
         this.props.addPost(postData)
+        .then(this.props.loadData)
         this.props.history.push('/posts')
     }
    
