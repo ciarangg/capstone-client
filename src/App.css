@@ -1,3 +1,5 @@
+
+
 .App {
   text-align: center;
 }
@@ -58,4 +60,33 @@
 
 #big {
   font-size: 90px;
+  margin-top: 10%;
+  margin-bottom: 5%;
+}
+
+/* body {
+  background-image: url("backgroundpic.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 150%;
+  position: absolute; 
+  object-fit: fill;
+}*/ 
+
+.splash{
+  background-image: url("backgroundpic.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%; 
+}
+
+.box {
+  margin-bottom: 20%;
+}
+
+#submit {
+  margin-top: 10%;
+}
+
+#pass {
+  margin-top: 10%;
 }

@@ -3,6 +3,7 @@ import Post from './Post'
 import NewPostForm from './NewPostForm'
 import { Route } from 'react-router-dom'
 import EditPostForm from './EditPostForm'
+import Header from './Header';
 
 const APIURL = 'https://fathomless-ocean-77552.herokuapp.com/posts/'
 
@@ -91,6 +92,10 @@ class PostList extends Component {
 
         console.log('state', this.state.posts)
         return(
+            <div>
+            <Header />
+        <br/>
+        <br/>
             <div className="list-group">
             <Route  exact path='/posts'  component={() => <div>{forumPost}</div> }/>
 
@@ -102,6 +107,8 @@ class PostList extends Component {
                 <EditPostForm {...props} addPost={this.addPost} loadData={this.loadData} />
             )}/>
 
+
+            </div>
 
             </div>
         )

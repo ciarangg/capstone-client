@@ -13,17 +13,19 @@ class App extends Component {
   render() {
  
     return (
+      
       <Router>  
+        
+        
        <div className="App">
-        <Header />
-        <br/>
-        <br/>
+        
 
         <Route exact path="/" component={SplashPage}/>
         <Route path='/posts' component={PostList}/>
         
 
        </div>
+       
       </Router>
     );
   }

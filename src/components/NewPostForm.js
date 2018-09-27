@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 
 class NewPostForm extends Component{
-    state={title:'', content:'', image:"", username:'billy bob'}
+    state={title:'', content:'', image:"https://media.licdn.com/dms/image/C4E03AQG5J8hDZtk7LA/profile-displayphoto-shrink_200_200/0?e=1543449600&v=beta&t=iK99f--T3vo1zKip423cmtiHt_dwxDU2ZUo1sYqJpnI", username:'ciaran'}
 
     onSubmit = e => {
         e.preventDefault()

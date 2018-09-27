@@ -1,14 +1,16 @@
 import React from 'react'
+import {Link} from "react-router-dom"
+//import glass from '../backgroundpic.jpg'
 
 const SplashPage = () => {
     return(
 
         
 
+<div className="splash" >
 
-
-<div className="container">
-<h1 ><span id="big" class="btn btn-primary">Welcome</span></h1>
+<div id="pic" className="container">
+<h1 ><span id="big" class="btn btn-primary">ScySpace</span></h1>
         <div id="login-row" className="row justify-content-center align-items-center">
             <div id="login-column" className="col-md-6">
                 <div className="box">
@@ -25,18 +27,22 @@ const SplashPage = () => {
                                 <label for="username" className="text-white">Username:</label><br />
                                 <input type="text" name="username" id="username" className="form-control" />
                             </div>
-                            <div className="form-group">
+                            <div id="pass" className="form-group">
                                 <label for="password" className="text-white">Password:</label><br />
-                                <input type="text" name="password" id="password" className="form-control" />
+                                <input type="password" name="password" id="password" className="form-control" />
                             </div>
-                            <div className="form-group">
-                                <input type="submit" name="submit" className="btn btn-primary" value="submit" />
+                            <Link to="/posts"className="nav-link" > 
+                            <div id="submit" className="form-group">
+                                <input type="submit" name="submit" className="btn btn-primary" value="Log in" />
                             </div>
+                            </Link>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+
     </div>
     )
 }
